@@ -1,6 +1,6 @@
 # 🖤💗 Developede by @LISA_FAN_LK | @UploadLinkToFileBot
 
-
+from pyrogram.enums import ChatAction
 import os
 import time
 import psutil
@@ -29,7 +29,7 @@ async def start(bot, update):
     )
     await bot.send_chat_action(
        chat_id=update.chat.id,
-       action="typing"
+       action=ChatAction.TYPING
     )
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, update)
