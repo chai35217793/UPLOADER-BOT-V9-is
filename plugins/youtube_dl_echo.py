@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from pyrogram.enums import ChatAction
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K | Modified by LISA-KOREA | @LISA_FAN_LK
 from pyrogram.enums import ParseMode
@@ -49,7 +50,7 @@ async def echo(bot, update):
     await add_user_to_database(bot, update)
     await bot.send_chat_action(
        chat_id=update.chat.id,
-       ChatAction.TYPING
+       action=ChatAction.TYPING
     )
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, update)
